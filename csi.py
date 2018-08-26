@@ -11,7 +11,15 @@ analysis = {"Black Hair": 0,
             "Male Gender": 0,
             "White Race": 0,
             "Black Race": 0,
-            "Asian Race": 0,}
+            "Asian Race": 0}
+
+eva = ["Female Gender", "White Race", "Blonde Hair", "Blue Eyes", "Oval Face"]
+
+larisa = ["Female Gender", "White Race", "Brown Hair", "Brown Eyes", "Oval Face"]
+
+matej = ["Male Gemder", "White Race", "Black Hair", "Blue Eyes", "Oval Face"]
+
+miha = ["Male Gender", "White Race", "Brown Hair", "Green Eyes", "Square Face"]
 
 print "WHO ATE THE ICE CREAM?!"
 print
@@ -48,6 +56,22 @@ analysis["Asian Race"] = dna.count("CGCGGGCCG")
 print
 print "The culprit has the following genetic traits:"
 print
+result = []
 for check in analysis:
-  if analysis[check] == 1:
-    print check
+    if analysis[check] == 1:
+        result.append(check)
+
+print result
+print
+print "Checking against suspect database..."
+print
+if set(result) == set(eva):
+    print "Eva is the culprit!"
+elif set(result) == set(larisa):
+    print "Larisa is the culprit!"
+elif set(result) == set(matej):
+    print "Matej is the culprit!"
+elif set(result) == set(miha):
+    print "Miha is the culprit!"
+else:
+    print "Nobody matches the suspect database!"
